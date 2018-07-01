@@ -136,7 +136,10 @@ module.exports = function(Chart) {
 			var width = view.right - view.left;
 			var height = view.bottom - view.top;
 			ctx.fillRect(view.left, view.top, width, height);
-			ctx.strokeRect(view.left, view.top, width, height);
+			
+			if( view.borderWidth > 0 ) {
+				ctx.strokeRect(view.left, view.top, width, height);
+			}
 
 			ctx.restore();
 		}
